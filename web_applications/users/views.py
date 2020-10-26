@@ -1,7 +1,12 @@
 # Create your views here.
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm
+
+def logout_view(request):
+    """Log the user out."""
+    logout(request)
+    return redirect('learning_logs:index')
 
 def register(request):
     """Register a new user."""
